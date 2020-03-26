@@ -1,0 +1,689 @@
+<html>
+<head>
+<meta charset ="UTF-8">
+<title>XYZ AUCTIONS ONLINE</title>
+<style>
+a:link, a:visited { 
+  color: red;
+  text-decoration: underline;
+  cursor: auto;
+}
+
+a:link:active, a:visited:active { 
+  color: green;
+}
+div.scrollmenu {
+  background-color:Black;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  font-size:20px;
+  text-align:center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color:#b9936c;
+}
+.dropbtn {
+  background-color: #364444;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+margin:6px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: purple;}
+
+table th,td {
+  border: 1px solid black;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+
+mark { 
+  background-color: yellow;
+  color: black;
+}
+
+body  {
+  background-image: url("paper.gif");
+  background-color: #cccccc;
+}
+.droptarget {
+  float: left; 
+  width: 200px; 
+  height: 65px;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+#yDIV {
+  border: 1px solid black;
+  width: 300px;
+  height: 200px;
+  overflow: scroll;
+</style>
+</head>
+<body style="background-image:url('bts2.jpg');background-size:100%;">
+<img src="auc3.jpg" width="200" height="100" align="right"><br>
+<h1 style="color:brown;font-size:75px;background-color:transparent;font-family:Lucida Console;text-align:center;">XYZ AUCTIONS ONLINE</h1>
+
+<div class="scrollmenu" class="bts">
+  <a href="#home">HOME</a>
+  <a href="#auction">AUCTIONS</a>
+  <a href="#academics">AUCTIONEERS</a>
+  <a href="#price">PRICE GUIDE</a>
+  <a href="#alert">AUCTION ALERTS</a>  
+  <a href="#account">MY ACCOUNT</a>
+  <a href="#contact">CONTACT US</a>
+ 
+<select>
+  <option value="volvo">tamilnadu</option>
+  <option value="saab">kerela</option>
+  <option value="opel">gujarat</option>
+  <option value="audi">karnataka</option>
+  <option value="volvo">andhra pradesh</option>
+  <option value="saab">mumbai</option>
+  <option value="opel">maharastra</option>
+  <option value="audi">assam</option>
+</select>
+</div>
+
+<marquee class="bts" style="color:pink;font-size:30px;font-family:verdana;">Easy to eye,bid it and try!</marquee>
+
+<h2 class="bts" style="font-family:Lucida Console;color:orange">Auction Items</h2>
+<div class="dropdown" class="bts">
+  <button class="dropbtn" class="bts">ART</button>
+  <div class="dropdown-content" class="bts">
+    <a href="#">art</a>
+    <a href="#">artists</a>
+    <a href="#">popular searches</a>
+  </div>
+</div>
+<div class="dropdown" class="bts">
+  <button class="dropbtn">JEWELLERY</button>
+  <div class="dropdown-content">
+    <a href="#">jewellery</a>
+    <a href="#">featured</a>
+    
+  </div>
+</div>
+<div class="dropdown" class="bts">
+  <button class="dropbtn">ASIAN ANTIQUES</button>
+  <div class="dropdown-content" class="bts">
+    <a href="#">browse by origin</a>
+    <a href="#">featured</a>
+    
+  </div>
+</div>
+<div class="dropdown" class="bts">
+  <button class="dropbtn">FURNITURE</button>
+  <div class="dropdown-content">
+    <a href="#">tables</a>
+    <a href="#">cabinets&case pieces</a>
+    <a href="#">browse by style</a>
+<a href="#">featured</a>
+  </div>
+</div>
+<div class="dropdown" class="bts">
+  <button class="dropbtn">FASHION</button>
+  <div class="dropdown-content">
+    <a href="#">clothing</a>
+    <a href="#">accessories</a>
+    <a href="#">featured designs</a>
+  </div>
+</div>
+<div class="dropdown" class="bts">
+  <button onclick="myFunction()" class="dropbtn">SEARCH</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()" id="demo" onkeydown="keydownFunction()" onkeyup="keyupFunction()" >
+
+    <a href="#about">Art</a>
+    <a href="#base">Jewellery</a>
+    <a href="#blog">Asian antiques</a>
+    <a href="#contact">Furniture</a>
+    <a href="#custom">Collectibles</a>
+    <a href="#support">Fashion</a>
+    <a href="#tools">help</a>
+  </div>
+</div>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+function keydownFunction() {
+  document.getElementById("myInput").style.backgroundColor = "pink";
+}
+
+function keyupFunction() {
+  document.getElementById("myInput").style.backgroundColor = "purple";
+}
+
+</script>
+
+
+
+<h3 class="bts" style="font-family:Book Antiqua;color:"orange">BENEFITS>><h3>
+<ol class="bts" type="i";align="centre";>
+  <li>Getting a Wider Selection </li>
+  <li>Saving Time For Shopping</li>
+  <li> Can Offer the Best Value</li>
+</ol>
+
+<h3 class="bts" style="font-family:Book Antiqua;color:orange">ABOUT>><h3>
+<ul class="bts" align="centre";>
+  <li><i>Well-established site with <mark>well-considered policies and procedures.</mark></i></li>
+  <li><i><mark>Buyer/seller reputations</mark> are a key part of transactions.<i></li>
+  <li><i>Just about everything can be found on eBay.</i></li>
+</ul>  
+<p class="bts" style="color:pink">BTS <img src="bts20.png" alt="purple heart" width="42" height="42"> army</p>
+
+<iframe height="300px" width="100%" src="demo_iframe.htm" name="iframe_a"></iframe>
+
+<p class="bts"><a href="https://www.sudduthrealty.com/5-benefits-online-auction-sites/" target="iframe_a">onlineauctionsbenefits.com</a></p>
+
+<p class="bts" style="color:purple;">Click on the picture:</p>
+
+<img src="bts1.jpg" width="245" height="226" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" alt="Sun" href="https://kpopvibe.com/collections/k-pop-merchandise-bts-clothing-accessories" media="screen and (min-color-index:256)">
+  <area shape="circle" coords="190,58,23" alt="Mercury" href="https://www.kpopbazaar.in/" media="screen and (min-color-index:256)">
+  <area shape="circle" coords="224,58,28" alt="Venus" href="https://www.amazon.com/slp/bts-kpop-merchandise/64wsvb6pgctr85j" media="screen and (min-color-index:256)">
+</map>
+<h4 style="font-family:palatino;"><h4>
+
+<table id="t01" class="bts" style="margin-bottom:20px;">
+  <tr>
+    <th colspan="3">ART</th>
+    <th colspan="2">JEWELLERY</th> 
+    <th colspan="3">ASIAN ANTIQUES</th>
+    <th colspan="3">FURNITURE</th>
+    <th colspan="3">FASHION</th>
+  </tr>
+  <tr>
+    <th>art</th> 
+    <th>artists</th> 
+    <th>popular searches</th> 
+    <th>jewellery</th> 
+    <th>featured</th> 
+    <th>asian antiques</th> 
+    <th>browse by origin</th> 
+    <th>featured</th>
+    <th>seating</th> 
+    <th>tables</th> 
+    <th>browse by style</th> 
+    <th>clothing</th> 
+    <th>accessories</th> 
+    <th>designers</th>  
+  </tr>
+  <tr>
+
+    <td>drawings</td>
+    <td>pablo picasso</td>
+    <td>oil paintings</td>
+    <td>costume jewellery</td>
+    <td>rolex</td>
+    <td>vases&garnitures</td>
+    <td>indian antiques</td>
+    <td>bronze</td>
+    <td>stools</td>
+    <td>chippendale</td>
+    <td>milo baughman</td>
+    <td>suits&ensembles</td>
+    <td>wallets</td>
+    <td>gucci</td>
+  </tr>
+  <tr>
+
+    <td>paintings</td>
+    <td>banksy</td>
+    <td>bronze statues</td>
+    <td>rings</td>
+    <td>bulova</td>
+    <td>furniture</td>
+    <td>korean antiques</td>
+    <td>porcelain</td>
+    <td>chairs</td>
+    <td>federal style</td>
+    <td>paul evans</td>
+    <td>sweaters</td>
+    <td>shoes</td>
+    <td>chanel</td>
+  </tr>
+  <tr>
+
+    <td>photography</td>
+    <td>andy warhol</td>
+    <td>portraits</td>
+    <td>brooches</td>
+    <td>cartier</td>
+    <td>jewellery</td>
+    <td>chinese antiques</td>
+    <td>woodblockprints</td>
+    <td>sofas</td>
+    <td>art deco</td>
+    <td>stickley</td>
+    <td>jackets&coats</td>
+    <td>eyeglasses</td>
+    <td>hermes</td>
+  </tr>
+  <tr>
+
+    <td>sculptures</td>
+    <td>frank stella</td>
+    <td>folk art</td>
+    <td>watches</td>
+    <td>bulgari</td>
+    <td>collectibles</td>
+    <td>persian antiques</td>
+    <td>cloisonne</td>
+    <td>benches</td>
+    <td>queen anne</td>
+    <td>hans wegner</td>
+    <td>skirts</td>
+    <td>hangbags</td>
+    <td>michael kors</td>
+  </tr>
+</table>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kBEHwl114Uw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></br>
+
+<p class="bts" style="color:yellow">Enter your name:</p> <input type="text" id="fname" onkeyup="mFunction()">
+
+<script>
+function mFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script>
+
+<p class="bts" style="color:yellow" >Enter your favorite product:</p>
+<input type="text" onkeypress="myFunction()" >
+<script>
+function myFunction() {
+  alert("You are entering your favorite product!");
+}
+</script>
+
+<p class="bts" style="color:yellow" >Enter your mail id:</p>
+<input type="text" name="txt" value="xyz@gmail.com" onchange="sFunction(this.value)">
+
+<script>
+function sFunction(val) {
+  alert("you have added your mail id! your mail id is: " + val);
+}
+</script>
+<p class="bts" style="color:yellow">Enter your mobile number:</p>
+ <input type="text" id="msInput" onfocus="focusFunction()" onblur="blurFunction()">
+
+<script>
+function focusFunction() {
+  document.getElementById("msInput").style.background = "pink";
+}
+function blurFunction() {
+  document.getElementById("msInput").style.background = "orange";
+}
+</script>
+
+<form class="bts" action="sub.html" onsubmit="sFunction()">
+<p style="color:yellow">Confirm your submission(yes/no):</p>
+  <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+function sFunction() {
+  alert("your response was submitted!");
+}
+</script>
+
+<div class="bts" id="myDIV" onwheel="bFunction()" style="color:skyblue" align="center"> Auctions beyond boundaries !
+
+</div>
+<script>
+function bFunction() {
+  document.getElementById("myDIV").style.fontSize = "50px";
+}
+</script>
+
+Field1: <input class="bts" type="text" id="field1" value="it's auction time!"><br>
+Field2: <input class="bts" type="text" id="field2"><br><br>
+<button class="bts" onclick="mfFunction()">Copy Text</button>
+<script>
+function mfFunction() {
+  document.getElementById("field2").value = document.getElementById("field1").value;
+}
+</script>
+<button class="bts" ondblclick="mlFunction()">Double-click me</button>
+
+<p id="emo"></p>
+
+<script>
+function mlFunction() {
+  document.getElementById("emo").innerHTML = "you have a chance to win an auction!";
+}
+</script>
+
+
+<iframe onload="jFunction()" src="tour.html" width=600px height=400px></iframe>
+
+<p id="dem"></p>
+
+<script>
+function jFunction() {
+  document.getElementById("dem").innerHTML;
+}
+</script>
+
+<img src="image.gif" onerror="maFunction()">
+<script>
+function maFunction() {
+  alert("The image could not be loaded.");
+}
+</script>
+
+<body onresize="myFunction()">
+
+<p class="bts" style="color:yellow;">Try to resize the browser window.</p>
+
+<script>
+function myFunction() {
+  alert("You have changed the size of the browser window!");
+}
+</script>
+
+<div class="bts" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p class="bts" style="color:orange;" ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">Drag me to the next box!</p>
+</div>
+
+<div class="bts" class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<p style="clear:both;"></p>
+
+<p id="o"></p>
+
+<script>
+function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+
+function dragging(event) {
+  document.getElementById("o").innerHTML = "being dragged";
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("Text");
+  event.target.appendChild(document.getElementById(data));
+  document.getElementById("o").innerHTML = "dropped";
+}
+</script>
+<p class="bts" style="color:yellow;">Scroll to get more info!!!</p>
+
+
+
+
+<div id="yDIV" class="bts" onscroll="dtFunction()">At online auctions, you will be required to register before you can buy or sell an item(s). Registration is required to track items you bid on or sell, keep up with the bids, determine this winning bids and build a database on seller and bidder feedback. Setting up an online email account separate from your main email account is recommended to help you track the progress of the auction and prevent spam from coming into your main account.</div>
+
+<script>
+function dtFunction() {
+  document.getElementById("yDIV").style.color = "orange";
+}
+</script>
+<p class="bts" style="color:yellow;" oncopy="nFunction()">Try to copy me!!</p>
+
+<script>
+function nFunction() {
+  alert("You copied text!");
+}
+</script>
+<input type="text" oncut="vFunction()" value="Try to cut this text">
+
+<p id="de"></p>
+
+<script>
+function vFunction() {
+  document.getElementById("de").innerHTML = "You cut text!";
+}
+</script>
+<input class="bts" type="text" onpaste="dFunction()" value="Try to paste something in here" size="40">
+
+<p id="d"></p>
+
+<script>
+function dFunction() {
+  document.getElementById("d").innerHTML = "You pasted text!";
+}
+</script>
+
+
+<div class="bts">
+
+<form>
+<p class="bts">Search : <input id="keywords" size="24"></p>
+</form>
+
+<p>Hi!! This is sasi!!Thank you!!</p>
+
+</div>
+
+
+<script>
+
+  window.addEventListener("DOMContentLoaded", function(e) {
+    var myHilitor2 = new Hilitor("bts");
+    myHilitor2.setMatchType("left");
+    document.getElementById("keywords").addEventListener("keyup", function(e) {
+      myHilitor2.apply(this.value);
+    }, false);
+  }, false);
+
+</script>
+
+<script>
+
+
+function Hilitor(id, tag)
+{
+
+  
+  var targetNode = document.getElementById(id) || document.body;
+  var hiliteTag = tag || "MARK";
+  var skipTags = new RegExp("^(?:" + hiliteTag + "|SCRIPT|FORM|SPAN)$");
+  var colors = ["yellow", "purple", "orange", "pink", "blue"];
+  var wordColor = [];
+  var colorIdx = 0;
+  var matchRegExp = "";
+  var openLeft = false;
+  var openRight = false;
+
+  // characters to strip from start and end of the input string
+  var endRegExp = new RegExp('^[^\\w]+|[^\\w]+$', "g");
+
+  // characters used to break up the input string into words
+  var breakRegExp = new RegExp('[^\\w\'-]+', "g");
+
+  this.setEndRegExp = function(regex) {
+    endRegExp = regex;
+    return endRegExp;
+  };
+
+  this.setBreakRegExp = function(regex) {
+    breakRegExp = regex;
+    return breakRegExp;
+  };
+
+  this.setMatchType = function(type)
+  {
+    switch(type)
+    {
+      case "left":
+        this.openLeft = false;
+        this.openRight = true;
+        break;
+
+      case "right":
+        this.openLeft = true;
+        this.openRight = false;
+        break;
+
+      case "open":
+        this.openLeft = this.openRight = true;
+        break;
+
+      default:
+        this.openLeft = this.openRight = false;
+
+    }
+  };
+
+  this.setRegex = function(input)
+  {
+    input = input.replace(endRegExp, "");
+    input = input.replace(breakRegExp, "|");
+    input = input.replace(/^\||\|$/g, "");
+    if(input) {
+      var re = "(" + input + ")";
+      if(!this.openLeft) {
+        re = "\\b" + re;
+      }
+      if(!this.openRight) {
+        re = re + "\\b";
+      }
+      matchRegExp = new RegExp(re, "i");
+      return matchRegExp;
+    }
+    return false;
+  };
+
+  this.getRegex = function()
+  {
+    var retval = matchRegExp.toString();
+    retval = retval.replace(/(^\/(\\b)?|\(|\)|(\\b)?\/i$)/g, "");
+    retval = retval.replace(/\|/g, " ");
+    return retval;
+  };
+
+  // recursively apply word highlighting
+  this.hiliteWords = function(node)
+  {
+    if(node === undefined || !node) return;
+    if(!matchRegExp) return;
+    if(skipTags.test(node.nodeName)) return;
+
+    if(node.hasChildNodes()) {
+      for(var i=0; i < node.childNodes.length; i++)
+        this.hiliteWords(node.childNodes[i]);
+    }
+    if(node.nodeType == 3) { // NODE_TEXT
+      if((nv = node.nodeValue) && (regs = matchRegExp.exec(nv))) {
+        if(!wordColor[regs[0].toLowerCase()]) {
+          wordColor[regs[0].toLowerCase()] = colors[colorIdx++ % colors.length];
+        }
+
+        var match = document.createElement(hiliteTag);
+        match.appendChild(document.createTextNode(regs[0]));
+        match.style.backgroundColor = wordColor[regs[0].toLowerCase()];
+        match.style.color = "#000";
+
+        var after = node.splitText(regs.index);
+        after.nodeValue = after.nodeValue.substring(regs[0].length);
+        node.parentNode.insertBefore(match, after);
+      }
+    };
+  };
+
+  // remove highlighting
+  this.remove = function()
+  {
+    var arr = document.getElementsByTagName(hiliteTag);
+    while(arr.length && (el = arr[0])) {
+      var parent = el.parentNode;
+      parent.replaceChild(el.firstChild, el);
+      parent.normalize();
+    }
+  };
+
+  // start highlighting at target node
+  this.apply = function(input)
+  {
+    this.remove();
+    if(input === undefined || !(input = input.replace(/(^\s+|\s+$)/g, ""))) {
+      return;
+    }
+    if(this.setRegex(input)) {
+      this.hiliteWords(targetNode);
+    }
+    return matchRegExp;
+  };
+
+}
+</script>
+
+
+
+</body>
+</html>
